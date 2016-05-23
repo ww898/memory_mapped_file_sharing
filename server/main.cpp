@@ -115,7 +115,7 @@ int main()
                 auto const _Size = recvmsg(_Accept_fd.get(), &_Msg, 0);
                 if (_Size < 0)
                 {
-                    perror("Failed to receive from socket");
+                    perror("Failed to receive data from socket");
                     return 1;
                 }
                 else if (_Size != sizeof(pid_t))
@@ -182,7 +182,7 @@ int main()
                 auto const _Size = sendmsg(_Accept_fd.get(), &_Msg, 0);
                 if (_Size < 0)
                 {
-                    perror("Failed to send to socket");
+                    perror("Failed to send data to socket");
                     return 1;
                 }
                 else if (_Size != sizeof(pid_t))
